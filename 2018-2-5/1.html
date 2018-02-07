@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<body>
+<div>
+    <input type="text">
+    <button>按钮</button>
+</div>
+<script>
+    var url = 'http://v.juhe.cn/weather/index?format=2&cityname=%E5%8C%97%E4%BA%AC&key=4bd5e067d613f11545e4cf44a72b91c0&callback=foo';
+    $("button").click(function () {
+        var text = $("input").val();
+        $.ajax({
+//            url: 'http://v.juhe.cn/weather/index?format=2&cityname=%E5%8C%97%E4%BA%AC&key=4bd5e067d613f11545e4cf44a72b91c0&callback=foo',
+            url: 'http://v.juhe.cn/historyWeather/province?format=2&cityname=安徽&key=92f6eda1f9f6acb3ceceba2347cd5d52&callback=foo',
+//            data: {
+//                q: text
+//            },
+            type: 'GET',
+            dataType: 'jsonp',
+            success: function (data) {
+                console.log(data);
+//                for (var i = 0; i < data.result.length; i++) {
+//                    console.log(data.result[i]);
+//                }
+            }
+        })
+    });
+
+
+</script>
+</body>
+
+</html>

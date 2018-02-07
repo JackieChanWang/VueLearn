@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+</head>
+<body>
+<input type="text">
+<button>按钮</button>
+<script>
+    $("button").click(function () {
+        var text = $("input").val();
+
+    });
+//    var url = 'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd="+txt+"&cb=foo';
+    $.ajax({
+        url: 'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=1111',
+//            data: {
+//                wd: text
+//            },
+        type: 'GET',
+        dataType: 'jsonp',
+        success: function (data) {
+            console.log(data);
+        }
+    })
+</script>
+</body>
+</html>

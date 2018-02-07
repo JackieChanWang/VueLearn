@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>多重值</title>
+    <style>
+        
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="example">
+        <p :style="{display: ['-webkit-box', 'flex', '-ms-flexbox']}"></p>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#example',
+            data: {
+                displayStyle: ['flex', '-ms-flexbox', '-webkit-box']
+            }
+        })
+    </script>
+</body>
+
+</html>

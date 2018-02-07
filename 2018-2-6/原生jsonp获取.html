@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no, email=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #box{
+            width: 350px;
+            margin: 50px auto;
+        }
+        #box input{
+            display: block;
+            width: 300px;
+            padding-left: 10px;
+            height: 30px;
+            border: 1px solid #000;
+        }
+        #box ul{
+            width: 310px;
+            border: 1px solid #000;
+            display: none;
+        }
+        #box>ul>li{
+            height: 30px;
+            padding-left: 10px;
+            line-height: 30px;
+            cursor: pointer;
+            overflow: hidden;
+        }
+        #box>ul>li:hover{
+            background-color: #ebc455;
+        }
+    </style>
+</head>
+<body>
+
+<!--
+https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=bbb&cb=jiyun
+-->
+
+<div id="box">
+    <input type="text">
+    <ul>
+        <li>11</li>
+        <li>2222</li>
+        <li>3333</li>
+    </ul>
+</div>
+
+<script>
+    var oInp = document.querySelector("#box input");
+    var oUl = document.querySelector("#box ul");
+    oInp.oninput = function () {
+        var txt = oInp.value;
+        if(txt){
+            var newScript = document.createElement("script");
+            newScript.src = "https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd="+txt+"&cb=foo";
+            document.body.appendChild(newScript);
+        }else{
+            oUl.style.display = "none"
+        }
+    };
+
+    function foo(data) {
+        console.log(data.s);
+        if(data.s.length){
+            var str = "";
+            for(var i in data.s){
+                str += "<li>"+data.s[i]+"</li>";
+            }
+            oUl.innerHTML = str;
+            oUl.style.display = "block"
+        }else{
+            oUl.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js表达式</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="app">
+        <span>{{num + 1}}</span>
+        <p>{{msg ? 'OK' : 'NO'}}</p>
+        <p>{{text.split('').reverse().join('')}}</p>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                num: 1,
+                msg: '',
+                text: 'hello world'
+            }
+        })
+    </script>
+</body>
+
+</html>

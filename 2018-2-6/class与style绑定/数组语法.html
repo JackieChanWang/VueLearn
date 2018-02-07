@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="example">
+        <!-- 数组式写法 -->
+        <p v-bind:class="[activeClass, errorClass]">数组式写法</p>
+        <!-- 数组混合写法 -->
+        <p v-bind:class="[{active : isActive},errorClass ]">数组混合写法</p>
+        <!-- 三元表达式写法 -->
+        <p v-bind:class="[isActive ? active: activeClass,errorClass]">三元表达式写法</p>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#example',
+            data: {
+                isActive: true,
+                active: 'aa',
+                activeClass: 'F',
+                errorClass: 'text-danger'
+            }
+        })
+    </script>
+</body>
+
+</html>

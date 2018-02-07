@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>v-on缩写</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="app">
+       <p v-on:click="btnclick()">v-on写法</p>
+       <p @click="btnclick2()">@click写法</p>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                title: 'aaaaaa',
+                msg: 'bbbbbbb'
+            },
+            methods: {
+                btnclick: function () {
+                    console.log(this.title);
+                },
+                btnclick2: function () {
+                    console.log('@缩写法');
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

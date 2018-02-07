@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .p {
+            color: yellow;
+        }
+
+        .text-danger {
+            color: red;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="example">
+        <!-- <p v-bind:class="{active: isActive}">不知道写个什么！</p> -->
+        <!-- <p class="p" v-bind:class="{active: isActive,'text-danger': hasError}">倩倩辛苦了！</p> -->
+
+        <p v-bind:class="classObject"></p>
+    </div>
+    <script>
+        // var vm = new Vue({
+        //     el: '#example',
+        //     data: {
+        //         isActive: true,
+        //         hasError: true
+        //     }
+        // })
+
+
+        var vm = new Vue({
+            el: '#example',
+            data: {
+                classObject: {
+                    active: false,
+                    'text-danger': true
+                }
+            }
+        })
+
+    </script>
+</body>
+
+</html>

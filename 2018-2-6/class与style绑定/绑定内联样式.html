@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>绑定内联样式</title>
+    <style>
+        div{
+            font-size: 30px;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="example">
+        <p v-bind:style="{color: activeColor, fontSize: fontSize}">131313</p>
+        <p v-bind:style="styleObject">abcddd</p>
+        <p v-bind:style="[styleObjectB, styleObjectA]">123abc</p>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#example',
+            data: {
+                styleObject: {
+                    color: 'yellow',
+                    fontWight: 900,
+                    fontSize: 100 + 'px'
+                },
+                styleObjectA: {
+                    color: 'pink'
+                },
+                styleObjectB: {
+                    transform: 'translateX(100px )'
+                },
+                activeColor: 'red',
+                fontSize: 50 + 'px'
+            }
+        })
+    </script>
+</body>
+
+</html>

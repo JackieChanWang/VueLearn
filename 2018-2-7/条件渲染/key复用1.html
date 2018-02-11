@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>key管理可复用的元素</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="example">
+        <template v-if="loginType === 'username'">
+            <label>username</label>
+            <input placeholder="Enter your username" key="username-input">
+        </template>
+        <template v-else>
+            <label>email</label>
+            <input placeholder="Enter your email address" key="email-input">
+        </template>
+        <br>
+        <button @click="toggleLoginType">Toggle login type</button>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#example',
+            data: {
+                flag: true,
+                loginType: 'username'
+            },
+            methods: {
+                toggleLoginType: function () {  //三元运算符条件没写对
+                    return this.loginType = this.loginType === 'username' ? 'email' : 'username'
+                }
+            }
+        })
+
+    </script>
+</body>
+
+</html>

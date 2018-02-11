@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>替换数组</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="example">
+        <div v-for="item in arr">{{item}}</div>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#example',
+            data: {
+                arr: [1, 2, 3, 4, 5]
+            }
+        })
+        vm.arr.push(6);         //末尾添加
+        vm.arr.shift(1);        //开头删除 
+        vm.arr.unshift(7);      //开头添加
+        vm.arr.pop(1);          //末尾删除
+        vm.arr.splice(0, 2)     //第一个参数下标，第二个长度
+        vm.arr.sort()           //数组排序从小到大
+        vm.arr.reverse()        //数组反序
+    </script>
+</body>
+
+</html>

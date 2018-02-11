@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>v-else</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="example">
+        <p v-if="dlag">YES</p>
+        <p v-else>NO</p>
+    </div>
+    <script>
+        //v-else 配合v-if元素的后面，否则它不会被识别的。
+        var vm = new Vue({
+            el: '#example',
+            data: {
+                dlag: false
+            }
+        })
+    </script>
+</body>
+
+</html>

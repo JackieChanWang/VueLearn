@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>v-for索引</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="example">
+        <ul>
+            <p>--v-for in用法--</p>
+            <li v-for="(item, index) in items">
+                父作用域：{{parentMsg}} -- 下标：{{index}} -- 子属性：{{item.msg}}
+            </li>
+            <p>--v-for of用法--</p>
+            <li v-for="(item, index) of items">
+                父作用域：{{parentMsg}} -- 下标：{{index}} -- 子属性：{{item.msg}}
+            </li>
+        </ul>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#example',
+            data: {
+                parentMsg: 'Parent',
+                items: [
+                    { msg: 'Foo' },
+                    { msg: 'Bar' }
+                ]
+            }
+        })
+
+    </script>
+</body>
+
+</html>

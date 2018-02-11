@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>对象v-for第三个参数</title>
+    <style>
+        li{
+            list-style: none;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="example">
+        <ul>
+            <!-- 从左往右依次是 值 属性 下标 -->
+            <li v-for="( value, key, index) in object">     
+                下标：{{index}}. 属性：{{key}}, 值：{{value}}
+            </li>
+        </ul>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#example',
+            data: {
+                object: {
+                    lastName: 'boe',
+                    firstName: 'John',
+                    age: 12
+                }
+            }
+        })
+
+    </script>
+</body>
+
+</html>

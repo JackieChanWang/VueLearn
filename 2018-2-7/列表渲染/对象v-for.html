@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>对象v-for第一个参数</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="example">
+        <ul>
+            <li v-for="value in object">
+                值：{{value}}
+            </li>
+        </ul>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#example',
+            data: {
+                object: {
+                    firstName: 'John',
+                    lastName: 'boe',
+                    age: 12
+                }
+            }
+        })
+
+    </script>
+</body>
+
+</html>

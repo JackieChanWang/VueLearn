@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="example">
+        <ul>
+            <!-- 计算属性 -->
+            <p>computed写法</p>
+            <li v-for="n in eventNumbers">{{n}}</li>
+            <!-- 方法 -->
+            <p>methods写法</p>
+            <li v-for="n in even(numbers)">{{n}}</li>
+            <p>一段取值范围的v-for</p>
+            <span v-for="n in 10"> {{n}} </span>
+        </ul>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#example',
+            data: {
+                numbers: [1, 2, 3, 4, 5]
+            },
+            computed: {
+                eventNumbers: function () {
+                    return this.numbers.filter(function (number) {
+                        return number % 2 === 0
+                    })
+                }
+            },
+            methods: {
+                even: function (arr) {
+                    return arr.filter(function (num) {
+                        return num % 2 === 1
+                    })
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
